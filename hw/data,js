@@ -1,0 +1,28 @@
+let weatherData = {
+    city: "Москва",
+    temperature: 25,
+    description: "Ясно"
+ };
+
+ fetch('https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=YOUR_API_KEY')
+   .then(response => response.json())
+   .then(data => {
+      weatherData = {
+         city: data.name,
+         temperature: data.main.temp,
+         description: data.weather[0].description
+      };
+      console.log(weatherData);
+   })
+   .catch(error => {
+      console.error('Ошибка:', error);
+   });
+
+   
+   const data = {
+    image: "image.jpg",
+    заголовок: "Заголовок",
+    параграф: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, alias?"
+  };
+
+
